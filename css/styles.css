@@ -91,7 +91,7 @@ body {
 .contact-icon2:hover {
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
-  color: #1374f2;
+  color: #7162d9;
 }
 
 .contact-icon3 {
@@ -1082,7 +1082,7 @@ p {
 
 .about-img-container__yoda {
   width: 10em;
-  margin-top: 275px;
+  margin-top: 310px;
   -webkit-transition: all 250ms ease-in;
   transition: all 250ms ease-in;
 }
