@@ -1,0 +1,180 @@
+/*------------------ SECTION 4 portfolio ---------------------*/
+
+.portfolio {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	padding-bottom: 15em;
+	overflow: hidden;
+
+	&__video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+		opacity: .2;
+		overflow: hidden;
+	}
+
+	&__video-content {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.container-portfo {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: 100%;
+	margin: 0;
+
+	&__h3 {
+		font-size: 2.5em;
+		text-transform: uppercase;
+		font-family: "adam";
+	}
+
+	&__year {
+		display: inline-block;
+		font-family: "adam";
+		font-size: 3.5em;
+		margin-top: 2em;
+		border-bottom: 2px solid $color-white;
+	}
+
+	&__year:nth-last-child(2) {
+		margin: 3em 0 1em 0;
+	}
+
+	&__card {
+		margin: 2em;
+	}
+
+	&__img-box {
+		position: relative;
+		width: 40em;
+		min-height: 50em;
+		background: $color-white;
+		padding: 0 0 10px 0;
+		border-radius: 10px;
+	}
+
+	&__text {
+		color: $color-black;
+		padding: 1em 2em;
+		text-align: left;
+	}
+
+	&__view {
+		color: $color-black;
+		text-decoration: underline;
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 250px;
+		border-radius: 10px 10px 0 0;
+	}
+
+	&__img-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 250px;
+		background: rgba(0, 0, 0, 0.6);
+		color: $color-white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.25s;
+		backdrop-filter: blur(5px);
+		border-radius: 9px;
+
+		& > * {
+			transform: translateY(2em);
+			transition: transform 0.25s;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&:hover > * {
+			transform: translateY(0);
+		}
+	}
+
+	&__link {
+		@include button;
+		font-family: "adam";
+	}
+
+	&__mobilelink {
+		display: none;
+	}
+}
+
+// SHOW MORE ----------------
+
+.read-more {
+	@include button;
+	transition: 200ms;
+	outline: none;
+	border: none;
+	margin-top: 5em;
+}
+
+.more-cards {
+	display: none;
+}
+
+.show-hide {
+	display: block !important;
+}
+
+// MEDIA QUERYS --------------------------
+
+@media only screen and (max-width: 1024px) {
+	.container-portfo {
+		margin: 0;
+
+		&__h3 {
+			font-size: 2.5em;
+			text-transform: uppercase;
+			margin-top: 3em;
+		}
+
+		&__card {
+			margin: 0;
+		}
+
+		&__img-box {
+			width: 30em;
+		}
+		&__img {
+			height: 200px;
+		}
+
+		&__view {
+			display: none;
+		}
+
+		&__img-overlay {
+			display: none;
+		}
+
+		&__mobilelink {
+			display: inline-block;
+			@include button;
+		}
+	}
+}

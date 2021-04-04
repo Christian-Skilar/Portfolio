@@ -1,0 +1,26 @@
+@keyframes animate-wave {
+	0% {
+		background-position: 0;
+	}
+	100% {
+		background-position: 1360px;
+	}
+}
+
+@keyframes animate-wave-reverse {
+	0% {
+		background-position: 1360px;
+	}
+	100% {
+		background-position: 0;
+	}
+}
+
+@keyframes wave {
+	0% {
+		transform: translateY(-8px);
+	}
+	100% {
+		transform: translateY(-8px);
+	}
+}

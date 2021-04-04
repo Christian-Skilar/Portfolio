@@ -1,0 +1,124 @@
+@mixin button {
+	font-family: "adam";
+	color: $color-white;
+	background: linear-gradient(to right, $color-fade-1 0%, $color-fade-2 100%);
+	padding: 0.5em 1.7em;
+	border-radius: 0.3em;
+	text-decoration: none;
+	font-size: 2.5em;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin: 1em auto;
+	border: none;
+
+	&:hover {
+		transform: scale(1.08);
+		box-shadow: 6px 13px 10px -3px $color-black;
+	}
+
+	&:active {
+		transform: scale(1.07);
+		box-shadow: none;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+@mixin wave {
+	position: absolute;
+	width: 100%;
+	height: 14.3em;
+	top: 0;
+	left: 0;
+	background: url(/img/wave.png);
+}
+
+@mixin text-gradient {
+	background-image: linear-gradient(to right, $color-fade-1, $color-fade-2);
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	color: transparent;
+}
+
+@mixin contact-icon {
+	margin: 100px 20px 20px 20px;
+	transition: 150ms;
+	color: $color-background;
+	opacity: .8;
+}
+
+@mixin neon-light {
+	color: #19ebff;
+	text-shadow: 0 0 10px #19ebff, 0 0 20px #19ebff, 0 0 40px #19ebff,
+		0 0 80px #19ebff, 0 0 120px #19ebff;
+
+	-webkit-text-fill-color: #19ebff;
+}
+
+@mixin cta-btn {
+	background: none;
+	font-family: "adam";
+	color: #ccc;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 15px 70px;
+	border: 1px solid $link-hover;
+	font-size: 30px;
+	border-radius: 5px;
+	transition: .6s;
+	overflow: hidden;
+	position: absolute;
+
+	&:focus {
+		outline: none;
+	}
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		background: rgba(255, 255, 255, .8);
+		width: 60px;
+		height: 100%;
+		left: 0;
+		top: 0;
+		opacity: .5;
+		filter: blur(30px);
+		transform: translateX(-130px) skewX(-15deg);
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		background: rgba(255, 255, 255, .5);
+		width: 30px;
+		height: 100%;
+		left: 30px;
+		top: 0;
+		opacity: 0;
+		filter: blur(30px);
+		transform: translate(-100px) scaleX(-15deg);
+	}
+
+	&:hover {
+		background: $link-hover;
+		cursor: pointer;
+		color: black;
+	}
+
+	&:hover:before {
+		transform: translateX(300px) skewX(-15deg);
+		opacity: .6;
+		transition: .7s;
+	}
+
+	&:hover:after {
+		transform: translateX(300px) skewX(-15deg);
+		opacity: 1;
+		transition: .7s;
+	}
+}

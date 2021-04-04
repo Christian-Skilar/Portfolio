@@ -1,0 +1,94 @@
+.section1 {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: -10em;
+	margin-bottom: 10em;
+	height: 100vh;
+
+	&__profile--img {
+		width: 40em;
+		border-radius: 50%;
+	}
+}
+
+.me-img-mobie {
+	display: none;
+}
+
+.cta {
+	@include cta-btn;
+}
+
+//
+//
+// MEDIA QUERYS ---------------------------------
+
+@media only screen and (max-width: 1300px) {
+	.section1 {
+		display: flex;
+		justify-content: center;
+
+		&__profile--img {
+			display: none;
+		}
+	}
+
+	.me-img-mobie {
+		display: block;
+		width: 25em;
+		border-radius: 50%;
+		margin: 0 auto;
+	}
+
+	.cta-container {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+//
+//
+// MEDIA QUERYS --------------Tablet-------------------
+
+@media only screen and (max-width: 1024px) {
+	.section1 {
+		justify-content: center;
+		flex-direction: column;
+
+		&__info {
+			display: none !important;
+		}
+
+		&__profile--img {
+			display: none;
+		}
+	}
+
+	.school {
+		flex-direction: column;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.me-img-mobie {
+		width: 20em;
+		margin: 10px auto;
+	}
+}
+//
+//
+// MEDIA QUERYS --------------Phone-------------------
+
+@media only screen and (max-width: 375px) {
+	.section1 {
+		&__profile--img {
+			display: none;
+		}
+	}
+
+	.me-img-mobie {
+		width: 15em;
+	}
+}
